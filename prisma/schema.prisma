@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  USER
+  EMPLOYEE
+  ADMIN
+}
+
+model User {
+  id String @id @default(uuid())
+  email String @unique
+  passwordHash String
+  role Role @default(USER)
+  createdAt DateTime @default(now())
+  sessions Session[]
+  notes Note[]
+}
+
+model Session {
+  id String @id @default(uuid())
+  token String @unique
+  userId String
+  user User @relation(fields: [userId], references: [id])
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model Note {
+  id String @id @default(uuid())
+  title String
+  userId String
+  user User @relation(fields: [userId], references: [id])
+  content String
+  createdAt DateTime @default(now())
+
+  @@unique([userId, title])
+}
