@@ -6,12 +6,6 @@ import bcrypt from "bcrypt";
 import { createSession, getCurrentUser } from "@/lib/auth";
 import { can } from "@/lib/permissions";
 
-export async function sayHello(name: string) {
-  console.log("Server Action ran on the SERVER", name);
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-  return `Server Action received: "${name}"`;
-}
-
 function ok(message: string) {
   return { success: true, message: message };
 }
