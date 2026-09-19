@@ -1,6 +1,6 @@
 import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import DeleteNote from "./delete-note";
+import DeleteNote from "./components/delete-note";
 
 export default async function AllNotes() {
   const currentUser = await getCurrentUser();

@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { deleteNote } from "./actions";
+import { deleteNote } from "../actions";
 
 export default function DeleteNote({ noteId }: { noteId: string }) {
   const [state, formAction, isPending] = useActionState(
