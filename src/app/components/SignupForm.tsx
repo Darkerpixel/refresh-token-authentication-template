@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { signup } from "./actions";
+import { signup } from "../actions";
 
 type SignupState = { success: boolean; message: string | null } | null;
 

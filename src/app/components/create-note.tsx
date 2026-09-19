@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { saveNote } from "./actions";
+import { saveNote } from "../actions";
 
 const CreateNote = () => {
   const [message, setMessage] = useState<string | null>(null);
