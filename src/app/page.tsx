@@ -1,4 +1,3 @@
-import GreetingButton from "./greeting-button";
 import CreateNote from "./create-note";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
@@ -18,7 +17,6 @@ export default async function Home() {
       <h1>{greeting}</h1>
       <LoginForm />
       <SignupForm />
-      <GreetingButton />
       <CreateNote />
       <AllNotes />
     </main>
